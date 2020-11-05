@@ -1,1 +1,2 @@
 # JSTaitotalo
+Learning Javascript
