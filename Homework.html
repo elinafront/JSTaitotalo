@@ -16,6 +16,25 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <style>
+      /*style for New Task 5. */
+/* Container holding the image and the text */
+.img-container {
+  position: relative;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+    </style>
+
     <title>Harjoituksia</title>
   </head>
   <body>
@@ -92,9 +111,10 @@
               </form>
             </div> 
           </div> 
-            <!--Task 5-->
+            <!--Task 4-->
             <h4 class="pt-3">Kertaus 4.</h4>
             <input id="myBtn" onclick="consolePrint()" type="button" value="Tulosta konsoliin" class="btn btn-success btn-block mt-4">
+            <!--Task 5-->
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Kertaus 5.</h4>
               <form id="practice-form">
@@ -116,7 +136,105 @@
                   </div>  
               </form>
             </div>
+            <!--New staf Task 1-->
+            <div class="card card-body text-center my-5">
+              <h4 class="heading display-5 pb-3">Uutta Harjoitus 1.</h4>
+              <p>Arvotaan luku 0 :n ja antamasi luvun väliltä.</p>
+              <form id="practice-form">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-text"></span>
+                    <input type="number" class="form-control" id="yourNumber" placeholder="Anna luku">
+                    </div>
+                  </div>
+                  <div class="form-group pt-3">
+                    <input id="myBtn" onclick="getRandomInt(max)" type="button" value="Arvotaan" class="btn btn-primary btn-block">
+                    <p id="number" class="pt-3 font-weight-bold">Arvonnan tulos: </p>
+                  </div>  
+              </form>
+            </div>
+            <!--New staf Task 2-->
+            <div class="card card-body text-center my-5">
+              <h4 class="heading display-5 pb-3">Uutta harjoitus 2.</h4>
+              <p>Anna kolme lukua. Suuruus järjestyksellä ei ole väliä. Katsotaan onnistummeko laskemaan oikean tuloksen kaavalla: <br> <span class="font-weight-bold">suurin arvo*keskimmäinen arvo/pienin arvo.</span></p>
+              <form id="practice-form">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-text"></span>
+                    <input type="number" class="form-control" id="one" placeholder="Anna 1. luku">
+                  </div>   
+                  </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-text"></span>
+                    <input type="number" class="form-control" id="two" placeholder="Anna 2. luku">
+                  </div>   
+                  </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-text"></span>
+                    <input type="number" class="form-control" id="three" placeholder="Anna 3. luku">
+                  </div>   
+                  </div>
+                  <div class="form-group pt-3">
+                    <input id="myBtn" onclick="laske()" type="button" value="Laske" class="btn btn-secondary btn-block">
+                    <p id="result" class="pt-3 font-weight-bold">Tulos: </p>
+                  </div>  
+              </form>
+            </div>
+              <!--Uutta harjoitus 3.-->
+            <div class="card card-body text-center my-5">
+              <h4 class="heading display-5 pb-3">Uutta harjoitus 3.</h4>
+              <p>Kirjoita kaksi sanaa tai lausetta niin katsotaan kumpi on pidempi.</p>
+              <form id="practice-form">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-text"></span>
+                    <input type="text" class="form-control" id="firstText" placeholder="Kirjoita ensimmäinen lause tai sana">
+                  </div>
+                </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-text"></span>
+                  <input type="text" class="form-control" id="secondText" placeholder="Kirjoita ensimmäinen lause tai sana">
+                </div>
+              </div>
+               <div class="form-group pt-3">
+                <input id="myBtn" onclick="word()" type="button" value=".. ja pidempi sana/lause on..." class="btn btn-danger btn-block">
+                  <p id="longerText" class="pt-3 font-weight-bold"></p>
+              </div>  
+            </form>
           </div>
+              <!--Uutta harjoitus 4.-->
+            <div class="card card-body text-center my-5">
+              <h4 class="heading display-5 pb-3">Uutta harjoitus 4.</h4>
+              <p>Kirjoita lause tai sana, jossa on paljon a kirjaimia. </p>
+              <form id="practice-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-text"></span>
+                  <input type="text" class="form-control" id="yourText" placeholder="Kirjoita lause tai sana.">
+                </div>
+              </div>
+               <div class="form-group pt-3">
+                <input id="myBtn" onclick="replace()" type="button" value="Vaihdetaan a kirjaimet e kirjaimiksi" class="btn btn-warning btn-block">
+                  <p id="newText" class="pt-3 font-weight-bold"></p>
+              </div>  
+            </form>
+          </div>
+          <!-- Uutta harjoitus 5.-->
+        <div class="img-container"></div>
+            <img src="img/teacup.jpeg" alt="teacup" style="width:100%;">
+            <div class="text-block">
+              <h5>Haudutus:</h5>
+              <div  id="tea">
+              </div>
+              <input id="myBtn" onclick="displayWhite()" type="button" value="valkoinen tee" class="btn btn-light btn-block mt-2">
+              <input id="myBtn" onclick="displayGreen()" type="button" value="vihreä tee" class="btn btn-success btn-block">
+              <input id="myBtn" onclick="displayBlack()" type="button" value="musta/punainen tee" class="btn btn-danger btn-block mb-2">
+            </div> 
+          </div>
+        </div>
       </div>
     </div>
   
@@ -154,7 +272,77 @@
         }
       }
 
+      // New Task 1
+      function getRandomInt(max) {
+        var min = 0;
+        var max = document.getElementById('yourNumber').value;
+        document.getElementById('number').innerHTML += Math.floor(Math.random()*Math.floor(max));
+      }
 
+      // New Task 2 ja tätä on mietitty... useamman kahvikupillisen kera... ei eleganttia vaan rautalangasta väännettyä, mutta tulipahan tehtyä ja vieläpä toimiva :)
+      function laske(){
+        var eka = document.getElementById('one').value;
+        var toka = document.getElementById('two').value;
+        var kolmas = document.getElementById('three').value;
+
+        var suurin = Math.max(eka,toka,kolmas);
+        var pienin = Math.min(eka,toka,kolmas);
+        var keskimmainen;
+
+        if((suurin == eka && pienin == toka) || (pienin == eka && suurin == toka)) {
+          keskimmainen = kolmas;
+          document.getElementById('result').innerHTML = "Tulos: " + suurin*keskimmainen/pienin;
+        } else if ((suurin == toka && pienin == kolmas) || (suurin == kolmas && pienin == toka)) {
+          keskimmainen = eka;
+          document.getElementById('result').innerHTML = "Tulos: " + suurin*keskimmainen/pienin;
+        } else {
+          keskimmainen = toka;
+          document.getElementById('result').innerHTML = "Tulos: " + suurin*keskimmainen/pienin;
+        }
+      }
+
+      // New Task 3
+        function word() {
+          var firstWord = document.getElementById('firstText').value;
+          var secondWord = document.getElementById('secondText').value;
+
+          if(firstWord.length > secondWord.length) {
+            document.getElementById('longerText').innerHTML = firstWord;
+          } else {
+            document.getElementById('longerText').innerHTML = secondWord;
+          }
+        }
+
+        // New Task 4
+        function replace() {
+          var aString = document.getElementById('yourText').value;
+          var eString = aString.replace(/a/gi, "e");
+          document.getElementById('newText').innerHTML = eString;
+        }
+
+        // New Task 5
+        document.getElementById("tea").style.display = "none";
+        function displayWhite() {
+          document.getElementById("tea").style.display = "block";
+          document.getElementById("tea").innerHTML = " 80 C, 2 min";
+          setTimeout(hide, 1500);
+        }
+        
+        function displayGreen() {
+          document.getElementById("tea").style.display = "block";
+          document.getElementById("tea").innerHTML = " 70-80 C, 1 min";
+          setTimeout(hide, 1500);
+        }
+        
+        function displayBlack() {
+          document.getElementById("tea").style.display = "block";
+          document.getElementById("tea").innerHTML = " 80-95 C, 1-4 min";
+          setTimeout(hide, 1500);
+        }
+
+        function hide() {
+          document.getElementById("tea").style.display = "none";
+        }
 
     </script>
 
