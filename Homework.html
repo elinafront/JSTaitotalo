@@ -16,7 +16,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+    crossorigin="anonymous"
+  />
+
     <style>
+      body {
+        background: rgb(191, 210, 240);
+      }
       /*style for New Task 5. */
 /* Container holding the image and the text */
 .img-container {
@@ -28,37 +38,35 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: black;
+  background-color: rgb(54, 52, 52);
   color: white;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 20px;
 }
     </style>
 
     <title>Harjoituksia</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Elinan JS</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link text-danger font-weight-bold active" href="index.html">Home </a>
-          <a class="nav-item nav-link  font-weight-bold active" href="Homework.html">Kotitehtävät<span class="sr-only">(current)</span></a>
+ 
+    <body class="bg-mine">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-light" href="#">Elinan JS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link text-danger font-weight-bold active" href="index.html">Home </a>
+            <a class="nav-item nav-link  font-weight-bold text-light active" href="Homework.html">Kotitehtävät<span class="sr-only">(current)</span></a>
+          </div>
         </div>
-      </div>
-    </nav>
-    
-    <body class="bg-light">
+      </nav>
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto">
-            <h1 class="text-center">Kotitehtäviä</h1>
+            <h1 class="text-center py-5">Kotitehtäviä</h1>
             <!--Task 1-->
             <div>
-              <h4>Kertaus 1:</h4>
+              <h4 class="text-center py-3">Kertaus 1:</h4>
               <p>
                 function erotus(eka,toka,kolmas,neljas) { <br>
                   var tulos = eka-toka-kolmas-neljas; <br>
@@ -70,7 +78,7 @@
             </div>
             <!--Task 2-->
             <div>
-              <h4>Kertaus 2:</h4>
+              <h4 class="text-center py-3">Kertaus 2:</h4>
               <p>
                 var sentence = "Kuinka kaipaankaan kissaa?"<br>
                 var aLetters = 0;<br>
@@ -86,6 +94,7 @@
             <!--Task 3-->
             <div class="card card-body text-center mt-5">
               <h4 class="heading display-5 pb-3">Kertaus 3.</h4>
+              <p>Anna kolme lukua</p>
               <form id="practice-form">
                 <div class="form-group">
                   <div class="input-group">
@@ -112,11 +121,12 @@
             </div> 
           </div> 
             <!--Task 4-->
-            <h4 class="pt-3">Kertaus 4.</h4>
+            <h4 class="text-center pt-3">Kertaus 4.</h4>
             <input id="myBtn" onclick="consolePrint()" type="button" value="Tulosta konsoliin" class="btn btn-success btn-block mt-4">
             <!--Task 5-->
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Kertaus 5.</h4>
+              <p>Tulostetaan teksti kerran ja annettu luku 5 kertaa</p>
               <form id="practice-form">
                 <div class="form-group">
                   <div class="input-group">
@@ -136,7 +146,7 @@
                   </div>  
               </form>
             </div>
-            <!--New staf Task 1-->
+            <!--New Task 1.-->
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Uutta Harjoitus 1.</h4>
               <p>Arvotaan luku 0 :n ja antamasi luvun väliltä.</p>
@@ -153,7 +163,7 @@
                   </div>  
               </form>
             </div>
-            <!--New staf Task 2-->
+            <!--New Task 2.-->
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Uutta harjoitus 2.</h4>
               <p>Anna kolme lukua. Suuruus järjestyksellä ei ole väliä. Katsotaan onnistummeko laskemaan oikean tuloksen kaavalla: <br> <span class="font-weight-bold">suurin arvo*keskimmäinen arvo/pienin arvo.</span></p>
@@ -182,7 +192,7 @@
                   </div>  
               </form>
             </div>
-              <!--Uutta harjoitus 3.-->
+              <!--New Task 3.-->
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Uutta harjoitus 3.</h4>
               <p>Kirjoita kaksi sanaa tai lausetta niin katsotaan kumpi on pidempi.</p>
@@ -205,7 +215,7 @@
               </div>  
             </form>
           </div>
-              <!--Uutta harjoitus 4.-->
+              <!--New Task 4.-->
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Uutta harjoitus 4.</h4>
               <p>Kirjoita lause tai sana, jossa on paljon a kirjaimia. </p>
@@ -222,7 +232,8 @@
               </div>  
             </form>
           </div>
-          <!-- Uutta harjoitus 5.-->
+          <!-- New Task 5.-->
+          <h4 class="text-center pb-2">Uutta harjoitus 5.</h4>
         <div class="img-container"></div>
             <img src="img/teacup.jpeg" alt="teacup" style="width:100%;">
             <div class="text-block">
@@ -237,6 +248,15 @@
         </div>
       </div>
     </div>
+
+    
+<footer class="container-md text-center mt-5 py-5 bg-dark">
+  <div class="">
+    <a href="#"><i class="fab fa-github fa-2x px-2 text-light"></i></a>
+    <a href="#"><a href="#"><i class="fab fa-linkedin fa-2x text-light"></i></a></a>
+  </div>
+   <p class="text-light pt-2">Copyright &copy; 2020 -Elina Kaperi</p>
+</footer>
   
   
        
@@ -245,6 +265,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+    <!--scripts for homework-->
     <script>
       // Task 3 sum function for three values
       function summa() {
