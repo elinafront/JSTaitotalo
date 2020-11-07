@@ -77,20 +77,24 @@
               </p>
             </div>
             <!--Task 2-->
-            <div>
-              <h4 class="text-center py-3">Kertaus 2:</h4>
-              <p>
-                var sentence = "Kuinka kaipaankaan kissaa?"<br>
-                var aLetters = 0;<br>
-                for (i = 0; i < sentence.length; i++) {<br>
-                if(sentence[i] === "a") { <br>
-                aLetters++; <br>
-                  } <br>
-                } <br>
-                console.log(aLetters);<br><br>
-                Konsoliin tulostuu: 8 <br> eli funktio antoi toivotun lopputuloksen.
-              </p>
+
+            <div class="card card-body text-center my-5">
+              <h4 class="heading display-5 pb-3">Kertaus 2.</h4>
+              <p>Kirjoita lause. Kokeile esim. 'Kuinka kaipaankaan kissaa?' Lasketaan montako a kirjainta lauseesta löytyy.</p>
+              <form id="practice-form">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-text"></span>
+                    <input type="text" class="form-control" id="aSentence" placeholder="Kirjoita jotain">
+                    </div>
+                  </div>
+                  <div class="form-group pt-3">
+                    <input id="myBtn" onclick="aLetters()" type="button" value="Montako a kirjainta lauseessa" class="btn btn-danger btn-block">
+                    <p id="aResult" class="pt-3 font-weight-bold"></p>
+                  </div>  
+              </form>
             </div>
+ 
             <!--Task 3-->
             <div class="card card-body text-center mt-5">
               <h4 class="heading display-5 pb-3">Kertaus 3.</h4>
@@ -274,6 +278,19 @@
 
     <!--scripts for homework-->
     <script>
+        //
+        function aLetters() {
+          var sentence = document.getElementById('aSentence').value;
+          var aLetters = 0;
+          for(i = 0; i < sentence.length; i++) {
+            if(sentence[i] == "a" || sentence[i] == "A") {
+              aLetters++;
+            }
+            document.getElementById('aResult').innerHTML = "Kirjain a esiintyy merkkijonossa " + "\'" + sentence + "\' " + aLetters + " kertaa.";
+          }
+        }
+
+
       // Task 3 sum function for three values
       function summa() {
         var eka = parseInt(document.getElementById('first').value);
