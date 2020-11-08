@@ -122,7 +122,8 @@
 
             <!--Task 4-->
             <h4 class="text-center pt-3">Kertaus 4.</h4>
-            <input id="myBtn" onclick="consolePrint()" type="button" value="Tulosta konsoliin" class="btn btn-success btn-block mt-4">
+            <input id="myBtn" onmouseover="openConsoleMsg()" onclick="consolePrint()" type="button" value="Tulosta konsoliin" class="btn btn-success btn-block mt-4">
+            <p id="open" class="text-center"></p>
 
             <!--Task 5-->
             <div class="card card-body text-center my-5">
@@ -303,6 +304,10 @@
       }
       
       // Task 4 function print in console
+      function openConsoleMsg() {
+        document.getElementById("open").innerHTML = "Avaa ensin konsolinäkymä (F12)";
+      }
+
       function consolePrint() {
         console.log("HTML ja JavaScript on parasta ikinä!");
       }
