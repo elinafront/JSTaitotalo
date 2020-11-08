@@ -27,7 +27,7 @@
   <title>Lisää harjoituksia</title>
  </head>
 
-  <body>
+  <>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
       <a class="navbar-brand text-light" href="#">JavaScript</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,20 +58,23 @@
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-text"></span>
-                  <input type="number" class="form-control" id="firstNum" placeholder="jotain">
+                  <input type="text" class="form-control" id="firstNum" placeholder="jotain">
                   </div>
                 </div>
                 <div class="input-group">
                   <span class="input-group-text"></span>
-                  <input type="number" class="form-control" id="" placeholder="jotain">
+                  <input type="text" class="form-control" id="" placeholder="jotain">
                   </div>
                   <div>
                 <div class="form-group pt-3">
                   <input id="myBtn" type="button" value="jotain" class="btn btn-dark btn-block">
                   <p id="myMessage" class="pt-3"></p>
                 </div>
-                  <img class="img-fluid" src="img/fun.jpeg" alt="smiles">
-                </div>  
+                 <p>Siirrä hiiren kursori kuvan päälle</p>
+                 <img onmouseover="smilesTalking()" class="img-fluid" src="img/fun.jpeg" alt="smiles">   
+                 <p id="smiles" class="pt-3 font-weight-bold"></p>
+                <input onclick="reLoad()" type="reset" value="Reset">
+              </div> 
             </form>
           </div> 
         </div>
@@ -94,7 +97,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Own scripts-->
 
+  <script>
+    function smilesTalking() {
+      document.getElementById("smiles").innerHTML = "Hey! Let's have some fun with JavaScript!";
+    }
+    function reLoad() {
+      location.reload();
+      return false;
+}
+
+  </script>
   </body>
 </html>
   
