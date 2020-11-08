@@ -20,27 +20,27 @@
         background: rgb(191, 210, 240);
       }
       /*style for New Task 5. */
-/* Container holding the image and the text */
-.img-container {
-  position: relative;
-}
+      /* Container holding the image and the text */
+      .img-container {
+        position: relative;
+      }
 
-/* Bottom right text */
-.text-block {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: rgb(54, 52, 52);
-  color: white;
-  padding: 20px;
-}
+      /* Bottom right text */
+      .text-block {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgb(54, 52, 52);
+        color: white;
+        padding: 20px;
+      }
     </style>
 
     <title>Kotitehtävät</title>
   </head>
  
     <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top ">
         <a class="navbar-brand text-light" href="#">JavaScript</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
         </div>
       </nav>
 
-      <div class="container">
+      <div class="container mt-5">
         <div class="row">
           <div class="col-md-6 mx-auto">
             <h1 class="text-center py-5">Kotitehtäviä</h1>
@@ -72,7 +72,6 @@
             </div>
 
             <!--Task 2-->
-
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Kertaus 2.</h4>
               <p>Kirjoita lause. Kokeile esim. 'Kuinka kaipaankaan kissaa?' Lasketaan montako a kirjainta lauseesta löytyy.</p>
@@ -120,9 +119,11 @@
               </form>
             </div> 
           </div> 
+
             <!--Task 4-->
             <h4 class="text-center pt-3">Kertaus 4.</h4>
             <input id="myBtn" onclick="consolePrint()" type="button" value="Tulosta konsoliin" class="btn btn-success btn-block mt-4">
+
             <!--Task 5-->
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Kertaus 5.</h4>
@@ -146,7 +147,8 @@
                   </div>  
               </form>
             </div>
-         
+            
+            <!-- Quote-->
             <div class="container bg-dark">
               <blockQuote class="text-light text-center pt-5">"You don't learn to walk by following rules. You learn by doing, and by falling over."
               </blockQuote>
@@ -170,6 +172,7 @@
                   </div>  
               </form>
             </div>
+
             <!--New Task 2.-->
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Uutta harjoitus 2.</h4>
@@ -199,6 +202,7 @@
                   </div>  
               </form>
             </div>
+
               <!--New Task 3.-->
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Uutta harjoitus 3.</h4>
@@ -222,6 +226,7 @@
               </div>  
             </form>
           </div>
+
               <!--New Task 4.-->
             <div class="card card-body text-center my-5">
               <h4 class="heading display-5 pb-3">Uutta harjoitus 4.</h4>
@@ -239,6 +244,7 @@
               </div>  
             </form>
           </div>
+
           <!-- New Task 5.-->
           <h4 class="text-center pb-2">Uutta harjoitus 5.</h4>
         <div class="img-container"></div>
@@ -274,7 +280,7 @@
 
     <!--scripts for homework-->
     <script>
-        //
+        // Task 2 How many a letters in the sentence
         function aLetters() {
           var sentence = document.getElementById('aSentence').value;
           var aLetters = 0;
