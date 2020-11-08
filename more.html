@@ -67,8 +67,8 @@
                   </div>
                   <div>
                 <div class="form-group pt-3">
-                  <input id="myBtn" type="button" value="jotain" class="btn btn-dark btn-block">
-                  <p id="myMessage" class="pt-3"></p>
+                  <input id="myBtn" type="button" onclick="message()" value="Uskallatko klikata" class="btn btn-dark btn-block">
+                  <p id="" class="pt-3"></p>
                 </div>
                  <p>Siirrä hiiren kursori kuvan päälle</p>
                  <img onmouseover="smilesTalking()" class="img-fluid" src="img/fun.jpeg" alt="smiles">   
@@ -107,6 +107,10 @@
       location.reload();
       return false;
 }
+
+    function message() {
+      alert("Katsotaan mitä ope seuraavaksi keksii. Vielä ei tapahdu mitään vaikka kuinka klikkaat"); 
+    }
 
   </script>
   </body>
