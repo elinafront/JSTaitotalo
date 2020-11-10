@@ -172,10 +172,10 @@
           if(num >= -10 && num <= 10) {
             document.getElementById('result').innerHTML = " Ok " + num;
           } else if (num < -10) {
-            document.getElementById('result').innerHTML = "Liian pieni! <span id='num'> "+sum+"</span> ";
+            document.getElementById('result').innerHTML = "Liian pieni! <span id='num'> "+num+"</span> ";
             document.getElementById("num").style.color = "green";
           } else {
-            document.getElementById('result').innerHTML = "Liian suuri!  <span id='num'> "+sum+"</span> ";
+            document.getElementById('result').innerHTML = "Liian suuri!  <span id='num'> "+num+"</span> ";
             document.getElementById("num").style.color = "green";
           }
           
@@ -191,10 +191,10 @@
         if(sum >= 25 && sum <= 75) {
             document.getElementById('tulos').innerHTML = " Ok ";
           } else if (sum < 25) {
-            document.getElementById('tulos').innerHTML = "Liian pieni! <p id='num'> "+sum+"</p> ";
+            document.getElementById('tulos').innerHTML = "Liian pieni! <span id='num'> "+sum+"</span> ";
             document.getElementById("num").style.color = "blue";
           } else {
-            document.getElementById('tulos').innerHTML = "Liian suuri! <p id='num'> "+sum+"</p> "; 
+            document.getElementById('tulos').innerHTML = "Liian suuri! <span id='num'> "+sum+"</span> "; 
             document.getElementById("num").style.color = "red";
           }
     
