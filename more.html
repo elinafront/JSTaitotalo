@@ -79,24 +79,44 @@
           </div> 
           <h3 class="py-5">Tämän päivän harjoitukset <span class="badge  badge-warning">New</span></h3>
 
+        <div class="card card-body text-center my-5">
+          <h2 class="heading display-5 pb-3">Numeron stailausta</h2>
           <form id="practice-form">
-           
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-text"></span>
                 <input type="number" class="form-control" id="numberGiven" placeholder="Anna numero">
                 </div>
               </div>
-    
                 <div>
               <div class="form-group pt-3">
                 <input id="myBtn" type="button" onclick="numberResult()" value="Tulostetaan" class="btn btn-dark btn-block">
                 <p id="result" class="pt-3">Tulos: </p>
               </div>
-     
             </div> 
           </form>
+        </div> 
 
+        <div class="card card-body text-center my-5">
+          <h2 class="heading display-5 pb-3">Numeron stailausta yhteenlaskulla</h2>
+          <form id="practice-form">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-text"></span>
+                <input type="number" class="form-control" id="firstNumberGiven" placeholder="Anna ensimmäinen numero">
+                </div>
+              </div>
+              <div class="input-group">
+                <span class="input-group-text"></span>
+                <input type="number" class="form-control" id="secondNumberGiven" placeholder="Anna toinen numero">
+              </div>             
+              <div class="form-group pt-3">
+                <input id="myBtn" type="button" onclick="sum()" value="Summa" class="btn btn-dark btn-block">
+                <p id="tulos" class="pt-3">Tulos: </p>
+              </div>
+            </div> 
+          </form>
+        </div> 
 
 
 
@@ -152,15 +172,33 @@
           if(num >= -10 && num <= 10) {
             document.getElementById('result').innerHTML = " Ok " + num;
           } else if (num < -10) {
-            document.getElementById('result').innerHTML = "Liian pieni";
-            document.getElementById("result").style.color = "green";
+            document.getElementById('result').innerHTML = "Liian pieni! " + num;
           } else {
-            document.getElementById('result').innerHTML = "Liian suuri!";
-            document.getElementById("result").style.color = "green";
+            document.getElementById('result').innerHTML = "Liian suuri!  " + num;
+
+          }
+          
+        }
+
+      // tuntitehtävä 2.  
+      function sum() {
+        var eka = parseInt(document.getElementById('firstNumberGiven').value);
+        var toka = parseInt(document.getElementById('secondNumberGiven').value);
+        var sum = eka + toka;
+
+    
+        if(sum >= 25 && sum <= 75) {
+            document.getElementById('tulos').innerHTML = " Ok ";
+          } else if (sum < 25) {
+            document.getElementById('tulos').innerHTML = "Liian pieni! ";
+            document.getElementById('tulos').style.color = "blue";
+          } else {
+            document.getElementById('tulos').innerHTML = "Liian suuri!  ";
+            document.getElementById('tulos').style.color = "red";
           }
         }
 
-        testi
+        
 
   </script>
   </body>
