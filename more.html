@@ -172,10 +172,11 @@
           if(num >= -10 && num <= 10) {
             document.getElementById('result').innerHTML = " Ok " + num;
           } else if (num < -10) {
-            document.getElementById('result').innerHTML = "Liian pieni! " + num;
+            document.getElementById('result').innerHTML = "Liian pieni! <span id='num'> "+sum+"</span> ";
+            document.getElementById("num").style.color = "green";
           } else {
-            document.getElementById('result').innerHTML = "Liian suuri!  " + num;
-
+            document.getElementById('result').innerHTML = "Liian suuri!  <span id='num'> "+sum+"</span> ";
+            document.getElementById("num").style.color = "green";
           }
           
         }
