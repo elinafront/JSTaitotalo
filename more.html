@@ -27,7 +27,7 @@
   <title>Lisää harjoituksia</title>
  </head>
 
-  <>
+  
     <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
       <a class="navbar-brand text-light" href="#">JavaScript</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -186,21 +186,20 @@
         var toka = parseInt(document.getElementById('secondNumberGiven').value);
         var sum = eka + toka;
 
-    
+     
         if(sum >= 25 && sum <= 75) {
             document.getElementById('tulos').innerHTML = " Ok ";
           } else if (sum < 25) {
-            document.getElementById('tulos').innerHTML = "Liian pieni! ";
-            document.getElementById('tulos').style.color = "blue";
+            document.getElementById('tulos').innerHTML = "Liian pieni! <p id='num'> "+sum+"</p> ";
+            document.getElementById("num").style.color = "blue";
           } else {
-            document.getElementById('tulos').innerHTML = "Liian suuri!  ";
-            document.getElementById('tulos').style.color = "red";
+            document.getElementById('tulos').innerHTML = "Liian suuri! <p id='num'> "+sum+"</p> "; 
+            document.getElementById("num").style.color = "red";
           }
-        }
-
+    
+      }
         
 
   </script>
   </body>
 </html>
-  
