@@ -360,6 +360,8 @@
 
           if(firstWord.length > secondWord.length) {
             document.getElementById('longerText').innerHTML = firstWord;
+          } else if (firstWord.length == secondWord.length) {
+            document.getElementById('longerText').innerHTML = "Sanat ovat yhtäpitkiä!";
           } else {
             document.getElementById('longerText').innerHTML = secondWord;
           }
