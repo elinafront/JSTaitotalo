@@ -118,6 +118,24 @@
               </div>
             </div> 
           </form>
+
+
+
+        <div class="card card-body text-center my-5">
+          <h2 class="heading display-5 pb-3">Mitä kissa ja koira sanoo</h2>
+          <form id="practice-form">
+            <div class="form-group">
+              <div class="input-group">            
+                
+                <input type="text" class="form-control" id="lueYksi" value="" placeholder="kirjoita kissa tai koira">
+                </div>
+                <span id="tunniste">Mitä mahtaa sanoa</span>
+              <div class="form-group pt-3">
+                <input id="myBtn" type="button" onclick="funktio()" value="Nappi" class="btn btn-dark btn-block">
+                <p id="result" class="pt-3"> </p>
+              </div>
+            </div> 
+          </form>
         </div> 
 
 
@@ -201,6 +219,21 @@
           }
     
       }
+
+      function funktio(){
+      var arvo = document.querySelector("#lueYksi").value;
+      var tulos;
+
+      if(arvo == "kissa") {
+        tulos = "Kissa sanoo miu!";
+      } else if(arvo == "koira") {
+        tulos = "koira sanoo wuf!"
+      } else {
+        tulos = "Nyt tuli virhe"
+      }
+ 
+      document.querySelector("#tunniste").innerHTML = tulos;
+    }
         
 
   </script>

@@ -42,3 +42,10 @@ function print() {
           document.getElementById('kertomat').innerHTML += tulos + ' ';
       }
     }
+
+/*
+    function funktio(){
+      var arvo = document.querySelector("#idNimi").value;
+
+      document.guerySelector("#idKorvattava/lisättävä").innerHTML = arvo;
+    } */
