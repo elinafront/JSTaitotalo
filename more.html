@@ -77,6 +77,32 @@
               </div> 
             </form>
           </div> 
+          <h3 class="py-5">Tämän päivän harjoitukset <span class="badge  badge-warning">New</span></h3>
+
+          <form id="practice-form">
+           
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-text"></span>
+                <input type="number" class="form-control" id="numberGiven" placeholder="Anna numero">
+                </div>
+              </div>
+    
+                <div>
+              <div class="form-group pt-3">
+                <input id="myBtn" type="button" onclick="numberResult()" value="Tulostetaan" class="btn btn-dark btn-block">
+                <p id="result" class="pt-3">Tulos: </p>
+              </div>
+     
+            </div> 
+          </form>
+
+
+
+
+
+
+
         </div>
       </div> 
     </div>
@@ -103,8 +129,9 @@
     // Onmouseover function for image
     function smilesTalking() {
       document.getElementById("smiles").innerHTML = "Hey! Let's have some fun with JavaScript!";
-    }
-    // Reload page
+    } 
+
+    // Reset Button Reload page
     function reLoad() {
       location.reload();
       return false;
@@ -113,6 +140,25 @@
     function message() {
       alert("Odotellaan mitä ope seuraavaksi keksii..."); 
     }
+
+    document.getElementById("idName").outerHTML = "<5>Testi</5>";
+    document.getElementById("idName").style.color = "green";
+
+    // tuntitehtävä 1.
+    function numberResult() {
+          var num = document.getElementById('numberGiven').value;
+        
+
+          if(num >= -10 && num <= 10) {
+            document.getElementById('result').innerHTML = " Ok " + num;
+          } else if (num < -10) {
+            document.getElementById('result').innerHTML = "Liian pieni";
+            document.getElementById("result").style.color = "green";
+          } else {
+            document.getElementById('result').innerHTML = "Liian suuri!";
+            document.getElementById("result").style.color = "green";
+          }
+        }
 
   </script>
   </body>
