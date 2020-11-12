@@ -47,37 +47,14 @@
         <div class="col-md-6 mx-auto">
           <h1 class="text-center text-light pt-5">Lisää harjoituksia</h1>
           <div class="card card-body text-center mt-5">
-            <h2 class="heading display-5 pb-3">Lomake</h2>
-            <form id="practice-form">
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-text"></span>
-                  <input type="text" class="form-control" id="" placeholder="jotain">
-                  </div>
-                </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-text"></span>
-                  <input type="text" class="form-control" id="firstNum" placeholder="jotain">
-                  </div>
-                </div>
-                <div class="input-group">
-                  <span class="input-group-text"></span>
-                  <input type="text" class="form-control" id="" placeholder="jotain">
-                  </div>
-                  <div>
-                <div class="form-group pt-3">
-                  <input id="myBtn" type="button" onclick="message()" value="Uskallatko klikata" class="btn btn-dark btn-block">
-                  <p id="" class="pt-3"></p>
-                </div>
+            <h2 class="heading display-5 pb-3">Harjoitellaan lisää</h2>             
                  <p>Siirrä hiiren kursori kuvan päälle</p>
                  <img onmouseover="smilesTalking()" class="img-fluid" src="img/fun.jpeg" alt="smiles">   
                  <p id="smiles" class="pt-3 font-weight-bold"></p>
-                <input onclick="reLoad()" type="reset" value="Reset">
-              </div> 
-            </form>
-          </div> 
-          <h3 class="py-5">Tämän päivän harjoitukset <span class="badge  badge-warning">New</span></h3>
+                <input class="btn btn-warning font-weight-bold" onclick="reLoad()" type="reset" value="Reset">
+          </div>  
+ 
+          <h3 class="py-5 text-center">Tunti harjoituksia <span class="badge  badge-warning">New</span></h3>
 
         <div class="card card-body text-center my-5">
           <h2 class="heading display-5 pb-3">Numeron stailausta</h2>
@@ -125,14 +102,16 @@
           <h2 class="heading display-5 pb-3">Mitä kissa ja koira sanoo</h2>
           <form id="practice-form">
             <div class="form-group">
-              <div class="input-group">            
-                
-                <input type="text" class="form-control" id="lueYksi" value="" placeholder="kirjoita kissa tai koira">
+              <div class="input-group">               
+                <input type="text" class="form-control mb-2" id="lueYksi" value="" placeholder="kirjoita kissa tai koira">
                 </div>
-                <span id="tunniste">Mitä mahtaa sanoa</span>
-              <div class="form-group pt-3">
-                <input id="myBtn" type="button" onclick="funktio()" value="Nappi" class="btn btn-dark btn-block">
-                <p id="result" class="pt-3"> </p>
+                <p class="p-4" id="tunniste">Mitä mahtaa sanoa</p>
+                <p id="aantely" class="display-3"></p>
+               
+                <div class="form-group pt-3">
+                <input id="myBtn" type="button" onclick="funktio()" value="Mitä sanoo?" class="btn btn-dark btn-block">
+               
+                <input id="myBtn" type="button" onclick="reLoad()" value="Tyhjennä" class="btn btn-warning btn-block">          
               </div>
             </div> 
           </form>
@@ -148,16 +127,6 @@
     </div>
 
 
-
-
-
-
-
-
-
-
-  
-  
        
      <!--scripts for bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -176,10 +145,11 @@
       location.reload();
       return false;
 }
+      /*
     // Alert for Button
     function message() {
       alert("Odotellaan mitä ope seuraavaksi keksii..."); 
-    }
+    } */
 
     document.getElementById("idName").outerHTML = "<5>Testi</5>";
     document.getElementById("idName").style.color = "green";
@@ -223,16 +193,32 @@
       function funktio(){
       var arvo = document.querySelector("#lueYksi").value;
       var tulos;
+      var vari;
+      var aani;
 
-      if(arvo == "kissa") {
-        tulos = "Kissa sanoo miu!";
-      } else if(arvo == "koira") {
-        tulos = "koira sanoo wuf!"
+      if(arvo == "kissa" || arvo == "Kissa" ) {
+        aani = " miu!"
+        tulos = arvo + " sanoo" + aani;
+        vari = "#fac800";
+      } else if(arvo == "koira" || arvo == "Koira") {
+        aani = " wuff!"
+        tulos = arvo + " sanoo " + aani;
+        vari = "#6464c8";
       } else {
-        tulos = "Nyt tuli virhe"
+        aani = "GRHHHHHH! "
+        tulos = aani + " Nyt tuli virhe"
+        vari = "#c80000";
       }
- 
-      document.querySelector("#tunniste").innerHTML = tulos;
+
+     var i = 5;
+      while(i > 0){
+        document.querySelector("#aantely").innerHTML += aani;
+        i--;
+      } 
+      
+   document.querySelector("#tunniste").innerHTML = tulos;
+      document.querySelector("#tunniste").style.color = vari;
+      document.querySelector("#tunniste").style.backgroundColor = "#969696";
     }
         
 
