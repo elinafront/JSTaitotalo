@@ -37,8 +37,8 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link text-light font-weight-bold active" href="index.html">Testailua</a>
           <a class="nav-item nav-link  font-weight-bold text-light active" href="Homework.html">Kotitehtävät</a>
-          <a class="nav-item nav-link font-weight-bold text-warning" href="more.html">Mitähän seuraavaksi?</a>
-          <a class="nav-item nav-link font-weight-bold text-success" href="#">Uutta<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link font-weight-bold text-light" href="more.html">Lisää harjoituksia</a>
+          <a class="nav-item nav-link font-weight-bold text-success" href="#">Kotitehtävät 2<span class="sr-only">(current)</span></a>
         </div>
       </div>
     </nav>
@@ -46,28 +46,107 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col-md-6 mx-auto">
-          <h1 class="text-center text-light pt-5">Lisää harjoituksia</h1> 
+    
  
-        
-        <!-- Tuntitehtävä 1.-->  
-        <div class="card card-body text-center my-5">
-          <h2 class="heading display-5 pb-3">jotain</h2>
-          <p>jotain</p>
-          <form id="practice-form">
-            <div class="form-group">
-              <div class="input-group">
-                <span class="input-group-text"></span>
-                <input type="number" class="form-control" id="numberGiven" placeholder="Anna numero">
+          <div>
+            <h1 class="text-center text-light mt-5">Kotitehtäviä <span class="badge  badge-success">New</span></h1>
+          </div>
+         
+        <!--Kotitehtävä kertausta 1.-->
+          <div class="card card-body text-center my-5">
+            <h2 class="heading display-5 pb-3">Montako kirjainta</h2>
+            <form id="practice-form">
+              <div class="form-group">
+                <div class="input-group">               
+                  <input type="text" class="form-control mb-2" id="lause" value="" placeholder="Kirjoita sana tai lause">
                 </div>
-              </div>
+                <div class="input-group">               
+                  <input type="text" class="form-control mb-2" id="kirjain" value="" placeholder="Mitä kirjainta lasketaan?">
+                </div>        
+                <div class="form-group pt-3">
+                  <input id="myBtn" type="button" onclick="findLetter()" value="Montakohan löytyy" class="btn btn-dark btn-block">        
+                </div>
+                <p id="tulostetaan">tulos </p>
+              </div> 
+            </form>
+          </div> 
+
+         <!--Kotitehtävä kertausta 2.-->
+          <div class="card card-body text-center my-5">
+            <h2 class="heading display-5 pb-3">Tulostetaan uusi elementti</h2>
+            <form id="practice-form">     
+                <div class="form-group pt-3">
+                  <input id="myBtn" type="button" onclick="newEl()" value="Tulosta:" class="btn btn-success btn-block">        
+                </div>
                 <div>
-              <div class="form-group pt-3">
-                <input id="myBtn" type="button" onclick="numberResult()" value="Tulostetaan" class="btn btn-dark btn-block">
-                <p id="result" class="pt-3">Tulos: </p>
-              </div>
-            </div> 
-          </form>
-        </div> 
+                <p id="print">Tähän jotain muuta </p>
+              </div> 
+            </form>
+          </div> 
+
+        <!--Kotitehtävä kertausta 3.-->
+          <div class="card card-body text-center my-5">
+            <h2 class="heading display-5 pb-3">Montako kertaa tulostetaan.</h2>
+            <form id="practice-form">
+              <div class="form-group">
+                <div class="input-group">               
+                  <input type="text" class="form-control mb-2" id="word" value="" placeholder="Kirjoita sana tai lause">
+                </div>
+                <div class="input-group">               
+                  <input type="text" class="form-control mb-2" id="times" value="" placeholder="Montako kertaa sana/lause tulostetaan?">
+                </div>        
+                <div class="form-group pt-3">
+                  <input id="myBtn" type="button" onclick="arvot()" value="Tulostetaan" class="btn btn-secondary btn-block">        
+                </div>
+                <p id="printing"></p>
+              </div> 
+            </form>
+          </div> 
+
+          <!--Kotitehtävä kertausta 4.-->
+          <div class="card card-body text-center my-5">
+            <h2 class="heading display-5 pb-3">Mun ja naapurin auto</h2>
+            <form id="practice-form">
+                  <p class="text-left">
+                    function auto(merkki, malli, vaihteet, kulutus) { <br>
+                      this.merkki = merkki; <br>
+                      this.malli = malli; <br>
+                      this.vaihteet = vaihteet; <br>
+                      this.kulutus = kulutus; <br>
+                
+                      this.kerroKulutus = function() {<br>
+                        console.log(this.malli + " kuluttaa polttoainetta " + this.kulutus + "100 <br>
+                        kilometriä kohti."); <br>
+                      }; <br>
+                    } <br><br>
+                  </p>
+                     <p class="text-success font-weight-bold">Avaa selaimen konsoli näkymä ja katso mitä tulostuu</p>
+                <div class="form-group pt-3">
+                  <input id="myBtn" type="button" onclick="(munAuto.kerroKulutus())" value="Mun auton kulutus" class="btn btn-warning btn-block">        
+                </div>
+                <div class="form-group pt-3">
+                  <input id="myBtn" type="button" onclick="(naapurinAuto.kerroKulutus())" value="Naapurin auton kulutus" class="btn btn-primary btn-block">        
+                </div>            
+            </form>
+          </div> 
+
+          <!-- Kotitehtävä kertausta 5.-->
+          <div class="card card-body text-center my-5">
+            <h2 class="heading display-5 pb-3">Array-olion tulostusta</h2>
+            <form id="practice-form">
+                  <p class="text-left">
+
+                    var animals = ['dog', 'cat', 'mouse', 'monkey'] <br><br>
+
+                <div class="form-group pt-2">
+                  <input id="myBtn" type="button" onclick="printArray()" value="Tulostetaan array" class="btn btn-danger btn-block">        
+                </div>
+                <p id="firstPrint"></p>
+                <p id="secondPrint"></p>
+                <p id="thirdPrint"></p>
+           
+            </form>
+          </div> 
 
 
 
@@ -87,6 +166,95 @@
 
   <script>
 
+
+
+
+    // Kertausta 1.
+    function findLetter() {
+      var lause = document.getElementById("lause").value;
+      var kirjain = document.getElementById("kirjain").value;
+      var kirjaimia = 0
+
+      for(i = 0; i < lause.length; i++) {
+        if(lause[i] == kirjain) {
+          kirjaimia++;
+        }
+        document.getElementById("tulostetaan").innerHTML =  "\'"+ kirjain + "\' " + " kirjaimia löytyi lauseesta " + "\'"+ lause + "\' " + kirjaimia + " kappaletta.";
+      } 
+    }
+
+    // Kertausta 2.
+    
+    function newEl() {
+      document.getElementById("print").outerHTML = "<h1><span id='moi'>Moi</span></h1>";
+      document.getElementById("moi").style.color = "white";
+      document.getElementById("moi").style.backgroundColor = "red";
+      document.getElementById("moi").style.padding = "5px 20px 10px 20px";
+      document.getElementById("moi").style.borderRadius = "50%";
+
+    }
+    
+
+    // Kertausta 3.
+ 
+    function tulostaa(){
+      
+      while(numero > 0){
+        document.getElementById("printing").outerHTML += numero + ". tulostus: " + sana + "<br>" ;
+        numero--;
+      }
+      }
+      
+      function arvot() {
+      this.numero = document.getElementById("times").value;
+      this.sana = document.getElementById("word").value;
+
+      tulostaa.call();
+      }
+
+     
+   
+
+
+    // Kertausta 4.
+    function auto(merkki, malli, vaihteet, kulutus) {
+      this.merkki = merkki;
+      this.malli = malli;
+      this.vaihteet = vaihteet;
+      this.kulutus = kulutus;
+
+      this.kerroKulutus = function() {
+        console.log(this.merkki + " " + this.malli + " kuluttaa polttoainetta " + this.kulutus + " 100 kilometriä kohti.");
+      };
+    }
+    
+    var munAuto = new auto("Mercedes", "C-malli", "manual", "6 litraa");
+    var naapurinAuto = new auto("BMW", "M3-malli", "auto", "8,3 litraa");
+
+    munAuto.kerroKulutus();
+    naapurinAuto.kerroKulutus();
+
+    // Kertausta 5.
+
+    function printArray() {
+      var animals = ['dog', 'cat', 'mouse', 'monkey']
+
+      document.getElementById("firstPrint").innerHTML = animals.toString();
+      document.getElementById("secondPrint").innerHTML = animals.join(" + "); // nopea tapa vaihtaa välimerkki arrayssa
+    }
+
+    // Välimerkin vaihto "pitkällä kaavalla"
+    String.prototype.replaceAll = function(target, replacement) {
+      return this.split(target).join(replacement);
+    };
+    array = new Array("dog,cat,mouse,monkey")
+
+    for(i = 0; i < array.length; ++i) {
+      array[i] = array[i].replaceAll(",","/")
+      document.getElementById("thirdPrint").innerHTML = array;
+    }
+
+   
   </script>
   </body>
 </html>

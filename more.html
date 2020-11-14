@@ -37,8 +37,8 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link text-light font-weight-bold active" href="index.html">Testailua</a>
           <a class="nav-item nav-link  font-weight-bold text-light active" href="Homework.html">Kotitehtävät</a>
-          <a class="nav-item nav-link font-weight-bold text-warning" href="#">Mitähän seuraavaksi?<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link font-weight-bold text-success" href="new.html">Uutta</a>
+          <a class="nav-item nav-link font-weight-bold text-warning" href="#">Lisää harjoituksia<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link font-weight-bold text-light" href="new.html">Kotitehtävät 2</a>
         </div>
       </div>
     </nav>
@@ -118,62 +118,10 @@
           </form>
         </div> 
 
-        <div>
-          <h3 class="text-center text-light">Kotitehtäviä <span class="badge  badge-warning">New</span></h3>
-        </div>
+    
 
 
-        <!--Kotitehtävä kertausta 1.-->
-        <div class="card card-body text-center my-5">
-          <h2 class="heading display-5 pb-3">Montako kirjainta</h2>
-          <form id="practice-form">
-            <div class="form-group">
-              <div class="input-group">               
-                <input type="text" class="form-control mb-2" id="lause" value="" placeholder="Kirjoita sana tai lause">
-              </div>
-              <div class="input-group">               
-                <input type="text" class="form-control mb-2" id="kirjain" value="" placeholder="Mitä kirjainta lasketaan?">
-              </div>        
-              <div class="form-group pt-3">
-                <input id="myBtn" type="button" onclick="findLetter()" value="Montakohan löytyy" class="btn btn-dark btn-block">        
-              </div>
-              <p id="tulostetaan">tulos </p>
-            </div> 
-          </form>
-        </div> 
 
-         <!--Kotitehtävä kertausta 2.-->
-        <div class="card card-body text-center my-5">
-          <h2 class="heading display-5 pb-3">Tulostetaan uusi elementti</h2>
-          <form id="practice-form">     
-              <div class="form-group pt-3">
-                <input id="myBtn" type="button" onclick="newEl()" value="Tulosta:" class="btn btn-dark btn-block">        
-              </div>
-              <div>
-              <p id="print">Tähän jotain muuta </p>
-            </div> 
-          </form>
-        </div> 
-
-        <!--Kotitehtävä kertausta 3.-->
-        <div class="card card-body text-center my-5">
-          <h2 class="heading display-5 pb-3">Montako kertaa tulostetaan.</h2>
-          <p>wooops tämä ei toimi vielä. funktio kateissa...</p>
-          <form id="practice-form">
-            <div class="form-group">
-              <div class="input-group">               
-                <input type="text" class="form-control mb-2" id="word" value="" placeholder="Kirjoita sana tai lause">
-              </div>
-              <div class="input-group">               
-                <input type="text" class="form-control mb-2" id="times" value="" placeholder="Montako kertaa sana/lause tulostetaan?">
-              </div>        
-              <div class="form-group pt-3">
-                <input id="myBtn" type="button" onclick="printingWords()" value="Tulostetaan" class="btn btn-dark btn-block">        
-              </div>
-              <p id="printing">tulos </p>
-            </div> 
-          </form>
-        </div> 
 
 
 
@@ -206,10 +154,10 @@
     function message() {
       alert("Odotellaan mitä ope seuraavaksi keksii..."); 
     } */
-
+    /*
     document.getElementById("idName").outerHTML = "<5>Testi</5>";
     document.getElementById("idName").style.color = "green";
-
+    */
     // tuntitehtävä 1.
     function numberResult() {
           var num = document.getElementById('numberGiven').value;
@@ -278,57 +226,25 @@
       document.querySelector("#tunniste").style.backgroundColor = "#969696";
     }
 
-    // Kertausta 1.
-    function findLetter() {
-      var lause = document.getElementById("lause").value;
-      var kirjain = document.getElementById("kirjain").value;
-      var kirjaimia = 0
+    // TUNTIHARJOITUS
+    var hedelmakori = new Array();
 
-      for(i = 0; i < lause.length; i++) {
-        if(lause[i] == kirjain) {
-          kirjaimia++;
-        }
-        document.getElementById("tulostetaan").innerHTML =  "\'"+ kirjain + "\' " + " kirjaimia löytyi lauseesta " + "\'"+ lause + "\' " + kirjaimia + " kappaletta.";
-      } 
+    var hedelma1 ={type: "omena", hinta: 15};
+    var hedelma2 ={type: "banaani", hinta: 10};
+    var hedelma3 ={type: "kiwi", hinta: 25};
+
+
+    hedelmakori.push(hedelma1, hedelma2, hedelma3);
+
+    var hinta = 0;
+    for(var i=0; i<=hedelmakori.length-1; i++) {
+      hinta = hinta + hedelmakori[i].hinta;
+
     }
 
-    // Kertausta 2.
-    function newEl() {
-      document.getElementById("print").outerHTML = "<h1><span id='moi'>Moi</span></h1>";
-      document.getElementById("moi").style.color = "white";
-      document.getElementById("moi").style.backgroundColor = "red";
-      document.getElementById("moi").style.padding = "5px 20px 10px 20px";
-    }
-  
-    // Kertausta 3.
-    function printingWords(word, times){
-      
-    }
+    console.log(hinta);
 
-    // Kertausta 4.
-    function auto(merkki, malli, vaihteet, kulutus) {
-      this.merkki = merkki;
-      this.malli = malli;
-      this.vaihteet = vaihteet;
-      this.kulutus = kulutus;
 
-      this.kerroKulutus = function() {
-        console.log(this.malli + " kuluttaa polttoainetta " + this.kulutus + "100 kilometriä kohti.");
-      };
-    }
-    
-    var munAuto = new auto("Mercedes", "C-malli", "manual", "6 litraa");
-    var naapurinAuto = new auto("BMW", "M3-malli", "auto", "8,3 litraa");
-
-    munAuto.kerroKulutus();
-    naapurinAuto.kerroKulutus();
-
-    // Kertausta 5.
-
-     var animals = ['dog', 'cat', 'mouse', 'monkey']
-
-     console.log(animals);
-     consle.log(animals.toString());
   </script>
   </body>
 </html>
