@@ -23,7 +23,18 @@
     body {
       background-color: rgb(131, 146, 133);
     }
-  </style>
+
+
+
+    @keyframes mymove {
+      from {
+        left: 0px;
+      }
+      to {left: 200px;
+      }
+   
+}
+</style>
   <title>Lisää harjoituksia</title>
  </head>
 
@@ -93,7 +104,7 @@
                   <input type="text" class="form-control mb-2" id="word" value="" placeholder="Kirjoita sana tai lause">
                 </div>
                 <div class="input-group">               
-                  <input type="text" class="form-control mb-2" id="times" value="" placeholder="Montako kertaa sana/lause tulostetaan?">
+                  <input type="number" class="form-control mb-2" id="times" value="" placeholder="Montako kertaa sana/lause tulostetaan?">
                 </div>        
                 <div class="form-group pt-3">
                   <input id="myBtn" type="button" onclick="arvot()" value="Tulostetaan" class="btn btn-secondary btn-block">        
@@ -143,14 +154,67 @@
                 </div>
                 <p id="firstPrint"></p>
                 <p id="secondPrint"></p>
+                <!--Pitkän kaavan tulostus toimii myös. Kts. funktio scripteissä-->
                 <p id="thirdPrint"></p>
-           
             </form>
           </div> 
 
+          <!--Uutta harjoitusta 6. ja 7. yhdistettynä-->
+          <div class="card card-body text-center my-5">
+            <h2 class="heading display-5 pb-3">Tallennetaan arvot arrayhin</h2>
+            <form id="practice-form">
+                <div class="form-group">
+                  <div class="input-group">               
+                    <input type="text" class="form-control mb-2" id="firstValue" value="" placeholder="Anna 1. merkkijono ">
+                  </div>
+                  <div class="input-group">               
+                    <input type="text" class="form-control mb-2" id="secondValue" value="" placeholder="Anna 2. merkkijono">
+                  </div>        
+                  <div class="input-group">               
+                    <input type="text" class="form-control mb-2" id="thirdValue" value="" placeholder="Anna 3. merkkijono">
+                  </div>        
+                  <div class="input-group">               
+                    <input type="number" class="form-control mb-2" id="fourthValue" value="" placeholder="Anna 1. numero">
+                  </div>        
+                  <div class="input-group">               
+                    <input type="number" class="form-control mb-2" id="fithValue" value="" placeholder="Anna 2.numero">
+                  </div>        
+                  <div class="form-group pt-3">
+                    <input id="myBtn" type="button" onclick="printAgain()" value="Tulostetaan" class="btn btn-secondary btn-block">        
+                  </div>
+                    <p id="printA"></p>
+                </div> 
+            </form>
+          </div>  
+
+          
+               <!--Uutta harjoitusta 8.-->
 
 
 
+          <div class="card card-body my-5">
+        
+            <div class="dropdown pb-5 mb-5">
+              <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown">Valitse
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li> <input id="myBtn" type="button" onclick="powAction()" value="POW" class="btn btn-light btn-block"></li>
+                <li> <input id="myBtn" type="button" onclick="crashAction()" value="CRASH" class="btn btn-light btn-block"></li>
+                <li> <input id="myBtn" type="button" onclick="bomfAction()" value="BOMF" class="btn btn-light btn-block"></li>
+              </ul>
+            </div>
+
+            <div id="pow" class="mb-2 mt-5">
+              <h2 class="p-2">POW</h2>
+            </div>
+            <div id="crash" class="mb-2">
+              <h2 class="p-2">CRASH</h2>
+            </div>
+            <div class="mb-5"id="bomf">
+              <h2 class="p-2">BOMF</h2>
+            </div>
+            <input class="btn btn-warning font-weight-bold mb-5" onclick="reLoad()" type="reset" value="Reset">
+          </div> 
 
         </div>
       </div> 
@@ -241,9 +305,12 @@
 
       document.getElementById("firstPrint").innerHTML = animals.toString();
       document.getElementById("secondPrint").innerHTML = animals.join(" + "); // nopea tapa vaihtaa välimerkki arrayssa
+      
+
     }
 
     // Välimerkin vaihto "pitkällä kaavalla"
+    /*
     String.prototype.replaceAll = function(target, replacement) {
       return this.split(target).join(replacement);
     };
@@ -253,7 +320,38 @@
       array[i] = array[i].replaceAll(",","/")
       document.getElementById("thirdPrint").innerHTML = array;
     }
+    */
 
+    // Uutta harjoitusta 6. ja 7. yhdistettynä
+    function printAgain() {
+      var eka = document.getElementById("firstValue").value;
+      var toka = " " + document.getElementById("secondValue").value;
+      var kolmas = " " +  document.getElementById("thirdValue").value;
+      var neljas = " " + document.getElementById("fourthValue").value;
+      var viisi  = " " + document.getElementById("fithValue").value;
+      
+      var testi = new Array();
+      testi.push(eka, toka, kolmas, neljas, viisi);
+      
+      document.getElementById("printA").innerHTML = "Tallensimme merkkijonot ja numerot taulukkoon testi, jonka pituus on " + testi.length + ". Merkkijonot ja numerot ovat: " + testi;
+}
+
+    // Uutta harjoitusta 8.
+    function powAction() {
+      document.getElementById("pow").style.cssText = "color: white; background-color: red; width: 100px; position: relative; text-align: center; animation: mymove 1s forwards;";
+    }
+    function crashAction() {
+      document.getElementById("crash").style.cssText = "color: blue; background-color: yellow; width: 120px; position: relative; text-align: center; animation: mymove 1s forwards;";
+    }
+    function bomfAction() {
+      document.getElementById("bomf").style.cssText = "color: green; background-color: black; width: 110px; position: relative; text-align: center; animation: mymove 1s forwards;";
+    }
+
+        // Reset Button Reload page
+        function reLoad() {
+      location.reload();
+      return false;
+}
    
   </script>
   </body>
