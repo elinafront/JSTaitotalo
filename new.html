@@ -193,7 +193,7 @@
 
 
           <div class="card card-body my-5">
-        
+            <h2 class="text-center pb-2">Animaatio ja tehosteita</h2>
             <div class="dropdown pb-5 mb-5">
               <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown">Valitse
               <span class="caret"></span></button>
@@ -205,13 +205,13 @@
             </div>
 
             <div id="pow" class="mb-2 mt-5">
-              <h2 class="p-2">POW</h2>
+              <p class="p-2">pow</p>
             </div>
             <div id="crash" class="mb-2">
-              <h2 class="p-2">CRASH</h2>
+              <p class="p-2">crash</p>
             </div>
             <div class="mb-5"id="bomf">
-              <h2 class="p-2">BOMF</h2>
+              <p class="p-2">bomf</p>
             </div>
             <input class="btn btn-warning font-weight-bold mb-5" onclick="reLoad()" type="reset" value="Reset">
           </div> 
@@ -338,13 +338,13 @@
 
     // Uutta harjoitusta 8.
     function powAction() {
-      document.getElementById("pow").style.cssText = "color: white; background-color: red; width: 100px; position: relative; text-align: center; animation: mymove 0.3s forwards;";
+      document.getElementById("pow").style.cssText = "text-transform: uppercase; font-size: 30px; color: white; background-color: red; width: 100px; position: relative; text-align: center; animation: mymove 0.3s forwards;";
     }
     function crashAction() {
-      document.getElementById("crash").style.cssText = "color: blue; background-color: yellow; width: 120px; position: relative; text-align: center; animation: mymove 0.3s forwards;";
+      document.getElementById("crash").style.cssText = "text-transform: uppercase; font-size: 30px;color: blue; background-color: yellow; width: 120px; position: relative; text-align: center; animation: mymove 0.3s forwards;";
     }
     function bomfAction() {
-      document.getElementById("bomf").style.cssText = "color: green; background-color: black; width: 110px; position: relative; text-align: center; animation: mymove 0.3s forwards;";
+      document.getElementById("bomf").style.cssText = "text-transform: uppercase; font-size: 30px;color: green; background-color: black; width: 110px; position: relative; text-align: center; animation: mymove 0.3s forwards;";
     }
 
         // Reset Button Reload page
