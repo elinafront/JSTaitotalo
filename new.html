@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="en">
 </head>
 <body>
@@ -49,7 +49,8 @@
           <a class="nav-item nav-link text-light font-weight-bold active" href="index.html">Testailua</a>
           <a class="nav-item nav-link  font-weight-bold text-light active" href="Homework.html">Kotitehtävät</a>
           <a class="nav-item nav-link font-weight-bold text-light" href="more.html">Lisää harjoituksia</a>
-          <a class="nav-item nav-link font-weight-bold text-success" href="#">Kotitehtävät 2<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link font-weight-bold text-success" href="#">Kotitehtävät 2<span class="sr-only">(current)</span></a>          
+          <a class="nav-item nav-link font-weight-bold text-light" href="challenge.html">Haaste</a>
         </div>
       </div>
     </nav>
@@ -216,6 +217,37 @@
             <input class="btn btn-warning font-weight-bold mb-5" onclick="reLoad()" type="reset" value="Reset">
           </div> 
 
+          <!-- Uutta harjoitus 9.-->
+          <div class="card card-body my-5">
+            <h2 class="text-center pb-2">Merkkijonoja merkkijonossa staililla</h2>
+            <p>Löytyykö lyhyt merkkijono pitkästä merkkijonosta?</p>
+            <div class="input-group">               
+              <input type="text" class="form-control mb-2" id="pitka" value="" placeholder="Anna pitkä merkkijono ">
+            </div>
+            <div class="input-group">               
+              <input type="text" class="form-control mb-2" id="lyhyt" value="" placeholder="Anna lyhyt merkkijono">
+            </div> 
+
+            <div class="dropdown pb-5 mb-5">
+              <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown">Valitse
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li> <input id="myBtn" type="button" onclick="search_Word()" value="värillä" class="btn btn-light btn-block"></li>
+                <li> <input id="myBtn" type="button" onclick="fontti()" value="fontilla" class="btn btn-light btn-block"></li>           
+              </ul>
+            </div>
+
+            <div id="varitus" class="mb-2 mt-5">
+              <p class="p-2"></p>
+            </div>
+            <div id="fontilla" class="mb-2">
+              <p class="p-2"></p>
+            </div>
+      
+            <p id="printti">tähän tulos</p>
+            <input class="btn btn-warning font-weight-bold mb-5" onclick="reLoad()" type="reset" value="Reset">
+          </div> 
+
         </div>
       </div> 
     </div>
@@ -352,7 +384,42 @@
       location.reload();
       return false;
 }
-   
+
+    
+
+const xmasPresents = ["socks", "book", ,"chocolate", "socks", "pyjama"];
+
+const noDuplicates = [...new Set(xmasPresents)];
+
+console.log(noDuplicates);
+
+
+/*function hello() {
+  return "Hello me!"
+}
+
+console.log(hello()); 
+
+
+var hello = function() {
+  return "Hello me!"
+}
+
+console.log(hello()); */
+
+var hello = () => "Hello!";
+
+
+console.log(hello());
+
+var hello = (nimi) => "Hello! Olen " + nimi;
+
+
+console.log(hello("Elina"));
+
+
+
+
   </script>
   </body>
 </html>

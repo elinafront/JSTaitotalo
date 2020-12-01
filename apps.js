@@ -49,3 +49,6 @@ function print() {
 
       document.guerySelector("#idKorvattava/lisättävä").innerHTML = arvo;
     } */
+
+
+    
